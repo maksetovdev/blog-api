@@ -15,9 +15,14 @@ Route::prefix('user')->group(function()
 });
 //!Routes for Blogs
 Route::prefix('blogs')->group(function()
-{
+{   
+    Route::get('/show_all',[BlogController::class,'index'])->middleware('auth:sanctum');
+    Route::get('/show/{id}',[BlogController::class,'show'])->middleware('auth:sanctum');
+    Route::post('/store',[BlogController::class,'store'])->middleware('auth:sanctum');
+    Route::post('/update/{id}',[BlogController::class,'update'])->middleware('auth:sanctum');
+    Route::get('/delete/{id}',[BlogController::class,'destroy'])->middleware('auth:sanctum');
 
-});//->middleware('auth:sanctum');
+});
 
 
 
