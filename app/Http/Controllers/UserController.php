@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function login(Request $request)
-    {
+    {   
         try
         {
             [$user, $token] = app(SignUp::class)->execute($request->all());
@@ -37,8 +37,8 @@ class UserController extends Controller
         }
     }
 
-        public function store(Request $request)
-    {
+        public function register(Request $request)
+    {   
         try
         {
             [$user, $token] = app(SignIn::class)->execute($request->all());

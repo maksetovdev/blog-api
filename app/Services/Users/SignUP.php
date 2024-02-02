@@ -30,7 +30,7 @@ class SignUp extends BaseService
       throw new ModelNotFoundException();
     }
     
-      $token = $user->createToken('user model')->plainTextToken; 
+      $token = $user->createToken('login')->plainTextToken; 
 
     return [$user, $token];
   }

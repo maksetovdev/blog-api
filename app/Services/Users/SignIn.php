@@ -26,7 +26,7 @@ class SignIn extends BaseService
         'email' => $data['email'],
         'password' => $data['password'],
     ]);
-    $token = $user->createToken('user model',['user'])->plainTextToken;
+    $token = $user->createToken('register',['user'])->plainTextToken;
     return [$user, $token];
   }
 }
